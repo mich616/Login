@@ -19,6 +19,7 @@
         android:layout_gravity="center_horizontal"/>
 
    <com.google.android.material.textfield.TextInputLayout
+       android:textColorHint="@color/white"
        android:layout_marginTop="75dp"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -38,6 +39,7 @@
    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:textColorHint="@color/white"
         android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,7 +57,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¿Olvido la contraseña?"
@@ -94,13 +95,16 @@
                 android:textColor="@color/white"/>
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tvRegistrarse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Registrarse"
                 android:textSize="16sp"
                 android:textStyle="bold|italic"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:clickable="true"
+                android:onClick="click"
+                android:focusable="true"/>
 
 
         </LinearLayout>
