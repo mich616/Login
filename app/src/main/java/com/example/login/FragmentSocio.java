@@ -1,5 +1,6 @@
 package com.example.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -17,7 +18,14 @@ public class FragmentSocio extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_socio, container, false);
+        View view = inflater.inflate(R.layout.fragment_socio, container, false);
+        View tvIniciarSesion = view.findViewById(R.id.tvIniciarSesion);
+        tvIniciarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), MainActivity.class));
+            }
+        });
+        return view;
     }
 }

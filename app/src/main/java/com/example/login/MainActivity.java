@@ -18,10 +18,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       tvRegistrarse = findViewById(R.id.btnIniciarSesion);
+       tvRegistrarse = findViewById(R.id.tvRegistrarse);
+       tvRegistrarse.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               startActivity(new Intent(getApplicationContext(), RegistroConTabLayout.class));
+           }
+       });
+
 
     }
-    public void click(View view){
-        startActivity(new Intent(this, RegistroConTabLayout.class));
-    }
+
 }

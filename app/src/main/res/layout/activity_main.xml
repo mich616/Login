@@ -1,112 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity"
-    android:padding="15dp"
     android:background="@drawable/bg">
 
     <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/circularImageView"
         android:layout_width="175dp"
         android:layout_height="175dp"
-        android:layout_marginTop="75dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
         android:src="@drawable/icono"
         app:civ_border_color="@color/white"
         app:civ_border_width="4dp"
-        android:layout_gravity="center_horizontal"/>
-
-   <com.google.android.material.textfield.TextInputLayout
-       android:textColorHint="@color/white"
-       android:layout_marginTop="75dp"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       app:boxBackgroundMode="outline"
-       app:errorEnabled="true"
-       app:counterEnabled="true"
-       app:counterMaxLength="20">
-
-       <com.google.android.material.textfield.TextInputEditText
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:hint="Usuario"
-           android:drawableStart="@drawable/ic_usuario"
-           android:drawableLeft="@drawable/ic_usuario" />
-
-
-   </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:textColorHint="@color/white"
-        android:layout_marginTop="25dp"
+        android:id="@+id/tilUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:hint="@string/usuario_login_hint"
+        android:textColorHint="@color/white"
         app:boxBackgroundMode="outline"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:errorEnabled="true"
-        app:passwordToggleEnabled="true">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circularImageView"
+        app:startIconDrawable="@drawable/ic_usuario">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contraseña"
-            android:drawableStart="@drawable/ic_pass"
-            android:drawableLeft="@drawable/ic_pass" />
+            android:inputType="text" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:hint="@string/contraseña_login_hint"
+        android:textColorHint="@color/white"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilUsuario"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/ic_pass">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿Olvido la contraseña?"
         android:layout_gravity="end"
-        android:textColor="@color/white"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/tv_olvido_contraseña"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilContraseña" />
+
+
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/boton_redondeado"
+        android:text="@string/btn_iniciar_sesion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <LinearLayout
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="15dp"
-        android:orientation="vertical"
-        android:gravity="bottom">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion">
 
-        <Button
-            android:id="@+id/btnIniciarSesion"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvNoRegistrado"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/boton_redondeado"
-            android:text="Iniciar Sesion"
-            android:layout_marginBottom="8dp"/>
+            android:text="@string/tv_no_registrado"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvRegistrarse"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="20dp">
+            android:text="@string/tv_registrarse"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold|italic" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingRight="8dp"
-                android:text="¿No esta registrado?"
-                android:textSize="16sp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tvRegistrarse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Registrarse"
-                android:textSize="16sp"
-                android:textStyle="bold|italic"
-                android:textColor="@color/white"
-                android:clickable="true"
-                android:onClick="click"
-                android:focusable="true"/>
-
-
-        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
